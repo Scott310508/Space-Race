@@ -81,12 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\149330471-nave-espacial-volando-8-bits-silueta-pixelada-diseño-de-ilustración-vectorial-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\360_F_683526245_ZwaZtpEz3O1h1QEVN9WeVuXS7fXe6k1y-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\spaceships.png" />
   </ItemGroup>
   <ItemGroup>

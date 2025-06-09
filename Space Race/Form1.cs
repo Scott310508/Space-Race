@@ -52,7 +52,6 @@ namespace Space_Race
             //Play theme song
             player = new SoundPlayer(Properties.Resources.theme_song);
             player.Play();
-            DisplayPage();
         }
 
 
@@ -75,28 +74,10 @@ namespace Space_Race
             quitButton.Visible = false;
             bulletList.Clear();
             bulletList2.Clear();
-            Thread.Sleep(3000);
-            DisplayPage();
             timer1.Start();
             this.Focus();
         }
 
-        private void DisplayPage()
-        {
-            switch (page)
-            {
-                case 1:
-                    
-                    break;
-                case 2:
-                    bulletList.Clear();
-                    bulletList2.Clear();
-                    player1Ins.Visible = true;
-                    player2Ins.Visible = true;
-                    Task.Delay(3000);
-                    break;
-            }
-        }
 
         //Quit button
         private void quitButton_Click(object sender, EventArgs e)

@@ -43,8 +43,6 @@
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.player2 = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
-            this.player1Ins = new System.Windows.Forms.Label();
-            this.player2Ins = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             this.SuspendLayout();
@@ -194,38 +192,12 @@
             this.player1.TabStop = false;
             this.player1.Visible = false;
             // 
-            // player1Ins
-            // 
-            this.player1Ins.AutoSize = true;
-            this.player1Ins.Font = new System.Drawing.Font("Pixelify Sans Medium", 39F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1Ins.ForeColor = System.Drawing.Color.White;
-            this.player1Ins.Location = new System.Drawing.Point(61, 358);
-            this.player1Ins.Name = "player1Ins";
-            this.player1Ins.Size = new System.Drawing.Size(403, 79);
-            this.player1Ins.TabIndex = 11;
-            this.player1Ins.Text = "P1 Controls";
-            this.player1Ins.Visible = false;
-            // 
-            // player2Ins
-            // 
-            this.player2Ins.AutoSize = true;
-            this.player2Ins.Font = new System.Drawing.Font("Pixelify Sans Medium", 39F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2Ins.ForeColor = System.Drawing.Color.White;
-            this.player2Ins.Location = new System.Drawing.Point(667, 358);
-            this.player2Ins.Name = "player2Ins";
-            this.player2Ins.Size = new System.Drawing.Size(415, 79);
-            this.player2Ins.TabIndex = 12;
-            this.player2Ins.Text = "P2 Controls";
-            this.player2Ins.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1123, 720);
-            this.Controls.Add(this.player2Ins);
-            this.Controls.Add(this.player1Ins);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.winTitle);
             this.Controls.Add(this.timerLabel);
@@ -265,8 +237,6 @@
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label winTitle;
         private System.Windows.Forms.Label timeLeftLabel;
-        private System.Windows.Forms.Label player1Ins;
-        private System.Windows.Forms.Label player2Ins;
     }
 }
 

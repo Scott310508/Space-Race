@@ -86,5 +86,14 @@
   <ItemGroup>
     <None Include="Resources\theme_song.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_collision.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scoring.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winner.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

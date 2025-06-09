@@ -36,6 +36,8 @@ namespace Space_Race
         bool sDown = false;
         bool upArrowDown = false;
         bool downArrowDown = false;
+        bool cantmove1 = false;
+        bool cantmove2 = false;
 
         //Declare random generator, sound-player and brush
         SolidBrush whiteBrush = new SolidBrush(Color.White);
@@ -58,10 +60,6 @@ namespace Space_Race
         //Start button
         private void startButton_Click(object sender, EventArgs e)
         {
-            if (page == 1)
-            {
-                page = 2;
-            }
             //timeLeftLabel.Visible = true;
             gameTitle.Visible = false;
             player1ScoreLabel.Visible = true;
@@ -74,6 +72,7 @@ namespace Space_Race
             quitButton.Visible = false;
             bulletList.Clear();
             bulletList2.Clear();
+            player.Stop();
             timer1.Start();
             this.Focus();
         }
@@ -186,6 +185,8 @@ namespace Space_Race
             {
                 if (player1Bounds.IntersectsWith(bulletList[i]))
                 {
+                    player = new SoundPlayer(Properties.Resources.bullet_collision);
+                    player.Play();
                     bulletList.RemoveAt(i);
                     player1.Location = new Point(this.Width / 4 - player1.Width, 500);
                 }
@@ -195,6 +196,9 @@ namespace Space_Race
             {
                 if (player1Bounds.IntersectsWith(bulletList2[i]))
                 {
+                    
+                    player = new SoundPlayer(Properties.Resources.bullet_collision);
+                    player.Play();
                     bulletList2.RemoveAt(i);
                     player1.Location = new Point(this.Width / 4 - player1.Width, 500);
                 }
@@ -204,6 +208,8 @@ namespace Space_Race
             {
                 if (player2Bounds.IntersectsWith(bulletList[i]))
                 {
+                    player = new SoundPlayer(Properties.Resources.bullet_collision);
+                    player.Play();
                     bulletList.RemoveAt(i);
                     player2.Location = new Point(this.Width / 4 * 3 - player2.Width, 500);
                 }
@@ -213,6 +219,8 @@ namespace Space_Race
             {
                 if (player2Bounds.IntersectsWith(bulletList2[i]))
                 {
+                    player = new SoundPlayer(Properties.Resources.bullet_collision);
+                    player.Play();
                     bulletList2.RemoveAt(i);
                     player2.Location = new Point(this.Width / 4 * 3 - player2.Width, 500);
                 }
@@ -221,12 +229,16 @@ namespace Space_Race
             //Give players score if they reach the top and reset their postions
             if (player1.Top < 0 - player1.Width)
             {
+                player = new SoundPlayer(Properties.Resources.scoring);
+                player.Play();
                 player1.Location = new Point(this.Width / 4 - player1.Width, 500);
                 player1Score++;
                 player1ScoreLabel.Text = $"{player1Score}";
             }
             if (player2.Top < 0 - player2.Width)
             {
+                player = new SoundPlayer(Properties.Resources.scoring);
+                player.Play();
                 player2.Location = new Point(this.Width / 4 * 3 - player2.Width, 500);
                 player2Score++;
                 player2ScoreLabel.Text = $"{player2Score}";
@@ -237,9 +249,10 @@ namespace Space_Race
             //{
             //    timeLeftLabel.Text += $"{timeLeft}";
             //}
-            if (player1Score == 3)
+            if (player1Score == 5)
             {
-
+                player = new SoundPlayer(Properties.Resources.winner);
+                player.Play();
                 bulletList.Clear();
                 bulletList2.Clear();
                 player1.Visible = false;
@@ -251,18 +264,21 @@ namespace Space_Race
                 winTitle.Text = "Player  1 Wins!!";
                 winTitle.Location = new Point(this.Width / 2 - winTitle.Width / 2, this.Height / 2 - winTitle.Height / 2);
             }
-            else if (player2Score == 3)
+
+            else if (player2Score == 5)
             {
+                player = new SoundPlayer(Properties.Resources.winner);
+                player.Play();
                 bulletList.Clear();
                 bulletList2.Clear();
                 player1.Visible = false;
                 player2.Visible = false;
                 gameTimer.Enabled = false;
                 winTitle.Visible = true;
-                winTitle.Location = new Point(this.Width / 2 - winTitle.Width, this.Height / 2);
                 player1ScoreLabel.Visible = false;
                 player2ScoreLabel.Visible = false;
-                winLabel.Text = "Player  2 Wins!!";
+                winTitle.Text = "Player  2 Wins!!";
+                winTitle.Location = new Point(this.Width / 2 - winTitle.Width / 2, this.Height / 2 - winTitle.Height / 2);
             }
             //else
             //{

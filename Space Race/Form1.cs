@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Space_Race.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,7 +61,6 @@ namespace Space_Race
         //Start button
         private void startButton_Click(object sender, EventArgs e)
         {
-            //timeLeftLabel.Visible = true;
             gameTitle.Visible = false;
             player1ScoreLabel.Visible = true;
             player2ScoreLabel.Visible = true;
@@ -85,7 +85,7 @@ namespace Space_Race
         }
 
 
-       //Draw bullets
+        //Draw bullets
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             for (int i = 0; i < bulletList.Count; i++)
@@ -107,22 +107,37 @@ namespace Space_Race
             if (wDown == true)
             {
                 player1.Top -= playerSpeed;
+                player1.Image = Resources.rocket;
             }
-
-            if (sDown == true)
+            
+            if (sDown == true && player1.Top <= 490)
             {
                 player1.Top += playerSpeed;
+                player1.Image = Resources.rocket;
+                player1.Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
             }
 
+            if (wDown == false && sDown == false)
+            {
+                player1.Image = Resources.spaceships;
+            }
             //Move player 2
             if (upArrowDown == true)
             {
                 player2.Top -= playerSpeed;
+                player2.Image = Resources.rocket;
             }
 
-            if (downArrowDown == true)
+            if (downArrowDown == true && player2.Top <= 490)
             {
                 player2.Top += playerSpeed;
+                player2.Image = Resources.rocket;
+                player2.Image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            }
+
+            if (upArrowDown == false && downArrowDown == false)
+            {
+                player2.Image = Resources.spaceships;
             }
 
             //Randomly set y location for bullets from both sides

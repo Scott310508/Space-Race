@@ -81,9 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\spaceships.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\theme_song.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\winner.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceships.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rocket.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

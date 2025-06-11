@@ -37,8 +37,6 @@ namespace Space_Race
         bool sDown = false;
         bool upArrowDown = false;
         bool downArrowDown = false;
-        bool cantmove1 = false;
-        bool cantmove2 = false;
 
         //Declare random generator, sound-player and brush
         SolidBrush whiteBrush = new SolidBrush(Color.White);

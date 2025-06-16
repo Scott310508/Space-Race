@@ -262,7 +262,7 @@ namespace Space_Race
             //{
             //    timeLeftLabel.Text += $"{timeLeft}";
             //}
-            if (player1Score == 5)
+            if (player1Score == 5 || player2Score == 5)
             {
                 player = new SoundPlayer(Properties.Resources.winner);
                 player.Play();
@@ -274,23 +274,11 @@ namespace Space_Race
                 winTitle.Visible = true;
                 player1ScoreLabel.Visible = false;
                 player2ScoreLabel.Visible = false;
-                winTitle.Text = "Player  1 Wins!!";
-                winTitle.Location = new Point(this.Width / 2 - winTitle.Width / 2, this.Height / 2 - winTitle.Height / 2);
-            }
-
-            else if (player2Score == 5)
-            {
-                player = new SoundPlayer(Properties.Resources.winner);
-                player.Play();
-                bulletList.Clear();
-                bulletList2.Clear();
-                player1.Visible = false;
-                player2.Visible = false;
-                gameTimer.Enabled = false;
-                winTitle.Visible = true;
-                player1ScoreLabel.Visible = false;
-                player2ScoreLabel.Visible = false;
-                winTitle.Text = "Player  2 Wins!!";
+                if (player1Score == 5)
+                {
+                    winTitle.Text = "Player  1 Wins!!";
+                }
+                else winTitle.Text = "Player  2 Wins!!";
                 winTitle.Location = new Point(this.Width / 2 - winTitle.Width / 2, this.Height / 2 - winTitle.Height / 2);
             }
             //else

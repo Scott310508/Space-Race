@@ -40,7 +40,6 @@
             this.winLabel = new System.Windows.Forms.Label();
             this.timerLabel = new System.Windows.Forms.Label();
             this.winTitle = new System.Windows.Forms.Label();
-            this.timeLeftLabel = new System.Windows.Forms.Label();
             this.player2 = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
@@ -158,18 +157,6 @@
             this.winTitle.TabIndex = 9;
             this.winTitle.Visible = false;
             // 
-            // timeLeftLabel
-            // 
-            this.timeLeftLabel.AutoSize = true;
-            this.timeLeftLabel.Font = new System.Drawing.Font("Pixelify Sans Medium", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLeftLabel.ForeColor = System.Drawing.Color.White;
-            this.timeLeftLabel.Location = new System.Drawing.Point(442, 604);
-            this.timeLeftLabel.Name = "timeLeftLabel";
-            this.timeLeftLabel.Size = new System.Drawing.Size(138, 97);
-            this.timeLeftLabel.TabIndex = 10;
-            this.timeLeftLabel.Text = "60";
-            this.timeLeftLabel.Visible = false;
-            // 
             // player2
             // 
             this.player2.Image = global::Space_Race.Properties.Resources.spaceships;
@@ -198,7 +185,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1123, 720);
-            this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.winTitle);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.winLabel);
@@ -236,7 +222,6 @@
         private System.Windows.Forms.Label winLabel;
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label winTitle;
-        private System.Windows.Forms.Label timeLeftLabel;
     }
 }
 

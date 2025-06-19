@@ -43,7 +43,6 @@ namespace Space_Race
         Random randGen = new Random();
         int randValue = 0;
         SoundPlayer player = new SoundPlayer();
-        int page = 1;
 
         public Form1()
         {
@@ -257,11 +256,6 @@ namespace Space_Race
                 player2ScoreLabel.Text = $"{player2Score}";
             }
 
-            //Check score and stop game if the time is over
-            //for(int timeLeft = 60; timeLeft >= 0;  timeLeft -= 1)
-            //{
-            //    timeLeftLabel.Text += $"{timeLeft}";
-            //}
             if (player1Score == 5 || player2Score == 5)
             {
                 player = new SoundPlayer(Properties.Resources.winner);
@@ -281,14 +275,6 @@ namespace Space_Race
                 else winTitle.Text = "Player  2 Wins!!";
                 winTitle.Location = new Point(this.Width / 2 - winTitle.Width / 2, this.Height / 2 - winTitle.Height / 2);
             }
-            //else
-            //{
-            //    gameTimer.Enabled = false;
-            //    winLabel.Visible = true;
-            //    player1ScoreLabel.Visible = false;
-            //    player2ScoreLabel.Visible = false;
-            //    winLabel.Text = "Tie!!";
-            //}
             Refresh();
         }
 
